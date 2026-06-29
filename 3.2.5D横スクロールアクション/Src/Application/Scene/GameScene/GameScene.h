@@ -10,7 +10,7 @@ class GameScene : public BaseScene
 public :
 
 	GameScene()  { Init(); }
-	~GameScene() {}
+	~GameScene() { JsonSave("Parameter", m_Json); }
 
 private:
 
@@ -19,4 +19,5 @@ private:
 
 	//変数
 	std::shared_ptr<Player> m_Player;
+
 };

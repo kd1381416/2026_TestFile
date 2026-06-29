@@ -31,6 +31,11 @@ void GameScene::Event()
 void GameScene::Init()
 {
 //===================================================================
+// Jsonファイル読み込み
+//===================================================================
+	JsonLoad("Parameter", m_Json);
+
+//===================================================================
 //Object追加
 //===================================================================
 //===カメラ===
@@ -53,6 +58,8 @@ void GameScene::Init()
 	//↓メンバー変数にポインタを用意したため不必要
 	//std::shared_ptr<Player>	_player;
 	m_Player = std::make_shared<Player>();
+	m_Player->SetJson(m_Json);
+	m_Player->Init();
 	m_objList.push_back(m_Player);
 
 //===背景===

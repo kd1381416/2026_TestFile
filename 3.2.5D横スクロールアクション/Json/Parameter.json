@@ -1,0 +1,16 @@
+{
+    "Player": {
+        "Alive": true,
+        "Hp": 10,
+        "Pos": {
+            "X": -20,
+            "Y": 2,
+            "Z": 0
+        },
+        "Split": {
+            "Heght": 6,
+            "Width": 6
+        },
+        "Texture": "Asset/Textures/char.png"
+    }
+}

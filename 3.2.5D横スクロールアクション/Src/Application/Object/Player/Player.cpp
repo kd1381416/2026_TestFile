@@ -14,15 +14,15 @@ void Player::Init()
 	//ポインタのままでは使い物にならないので実体化させる
 	m_Polygon = std::make_shared<KdSquarePolygon>();
 	//画像の読み込み
-	m_Polygon->SetMaterial("Asset/Textures/char.png");
+	m_Polygon->SetMaterial(m_Json["Player"]["Texture"]);
 	//画像を分割
-	m_Polygon->SetSplit(6, 6);
+	m_Polygon->SetSplit(m_Json["Player"]["Split"]["Width"], m_Json["Player"]["Split"]["Heght"]);
 	//原点を変更
 	m_Polygon->SetPivot(KdSquarePolygon::PivotType::Center_Bottom);
 
 //===座標===
 	//座標初期化
-	m_Pos = { -20.0f, 2.0f,0.0f };
+	m_Pos = { m_Json["Player"]["Pos"]["X"],m_Json["Player"]["Pos"]["Y"] ,m_Json["Player"]["Pos"]["Z"]};
 }
 
 //===================================================================
