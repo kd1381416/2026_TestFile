@@ -48,6 +48,8 @@ void Player::Update()
 	m_Pos.y -= m_Gravity;
 	m_Gravity += 0.005f;
 
+	m_Pos = { m_Json["Player"]["Pos"]["X"],m_Json["Player"]["Pos"]["Y"] ,m_Json["Player"]["Pos"]["Z"] };
+
 //===行列作成===
 	//座標行列
 	Math::Matrix _transmat = Math::Matrix::CreateTranslation(m_Pos);
